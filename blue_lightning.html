@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Blue Lightning – DARPCC</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #000;
+  color: #fff;
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* PRODUCT PAGE */
+.product-page {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  max-width: 1100px;
+  margin: auto;
+  background: white;
+  border-radius: 16px;
+  margin-top: 40px;
+}
+
+.product-img {
+  width: 450px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 14px;
+  background: #eee;
+}
+
+.product-info h1 {
+  margin-bottom: 10px;
+}
+
+.product-info h2 {
+  margin-bottom: 15px;
+}
+
+.product-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.product-info li {
+  margin-bottom: 8px;
+}
+
+.product-info button {
+  margin-top: 20px;
+  padding: 12px 22px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.product-info button:hover {
+  background: #333;
+}
+</style>
+<nav class="navbar">
+        <div class="logo">DARPCC</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="PruductsPage.html">Products</a></li>
+            <li><a href="SupportPage.html">Support</a></li>
+            <li><a href="AboutUsPage.html">AboutUs</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+    </nav>
+
+<div class="product-page">
+  <img src="images/left-image.jpg" class="product-img">
+
+  <div class="product-info">
+    <h1>Blue Lightning</h1>
+    <h2>€1,450</h2>
+
+    <ul>
+      <li>CPU: Intel Core i5 (12th Gen)</li>
+      <li>GPU: NVIDIA RTX 3060 12GB</li>
+      <li>RAM: 16GB DDR4 RGB</li>
+      <li>Storage: 1TB NVMe SSD</li>
+      <li>Motherboard: B660 Chipset</li>
+      <li>PSU: 750W 80+ Gold</li>
+      <li>Case: RGB Tempered Glass Mid Tower</li>
+      <li>Cooling: 360mm RGB Liquid Cooler</li>
+    </ul>
+
+    <button onclick="addToCart()">Add to Cart</button>
+  </div>
+</div>
+
+<script>
+function addToCart() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push({
+    name: "Blue Lightning PC",
+    price: 1450
+  });
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert("Blue Lightning added to cart");
+}
+</script>
+
+</body>
+</html>

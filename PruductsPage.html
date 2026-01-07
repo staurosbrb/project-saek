@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEFREALPCCOMPANY</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body>
+     <nav class="navbar">
+        <div class="logo">DARPCC</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="SupportPage.html">Support</a></li>
+            <li><a href="AboutUsPage.html">AboutUs</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+    </nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DARPCC Products</title>
+<style>
+body { font-family: Arial, sans-serif; background:#f4f4f4; padding:20px; }
+h1 { text-align:center; margin-bottom:30px; }
+.grid { display:grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap:20px; }
+.product-box { background:#fff; padding:15px; border-radius:8px; text-align:center; box-shadow:0 4px 8px rgba(0,0,0,0.1); }
+.product-box img { width:150px; height:150px; object-fit:contain; margin-bottom:10px; }
+.product-box h3 { font-size:18px; margin:5px 0; }
+.product-box p { margin:5px 0; font-weight:bold; color:#222; }
+.product-box button { padding:8px 12px; font-size:14px; cursor:pointer; background:#222; color:#fff; border:none; border-radius:4px; }
+.top-bar { display:flex; justify-content:flex-end; margin-bottom:20px; }
+.top-bar a { text-decoration:none; color:#fff; background:#222; padding:10px 15px; border-radius:5px; }
+</style>
+</head>
+<body>
+<br>
+<h1>DARPCC Products</h1>
+<div class="grid" id="product-grid"></div>
+
+<script>
+const products = [
+  {name:"Intel i5", price:200, img:"images/intel_i5.jpg"},
+  {name:"Intel i7", price:300, img:"images/intel_i7.jpg"},
+  {name:"Ryzen 5", price:220, img:"images/ryzen5.jpg"},
+  {name:"Ryzen 7", price:350, img:"images/ryzen7.jpg"},
+
+  {name:"RTX 3060", price:400, img:"images/rtx3060.jpg"},
+  {name:"RTX 4070", price:700, img:"images/rtx4070.jpg"},
+  {name:"RX 6700 XT", price:500, img:"images/rx6700.jpg"},
+  {name:"RX 6800 XT", price:800, img:"images/rвенx6800.jpg"},
+
+  {name:"16GB DDR4", price:70, img:"images/ddr4_16.jpg"},
+  {name:"32GB DDR4", price:130, img:"images/ddr4_32.jpg"},
+  {name:"16GB DDR5", price:100, img:"images/ddr5_16.jpg"},
+  {name:"32GB DDR5", price:180, img:"images/ddr5_32.jpg"},
+
+  {name:"512GB SSD", price:60, img:"images/ssd_512.jpg"},
+  {name:"1TB SSD", price:100, img:"images/ssd_1tb.jpg"},
+  {name:"2TB SSD", price:180, img:"images/ssd_2tb.jpg"},
+  {name:"2TB HDD", price:80, img:"images/hdd_2tb.jpg"},
+
+  {name:"MSI B550", price:150, img:"images/b550.jpg"},
+  {name:"ASUS X570", price:250, img:"images/x570.jpg"},
+  {name:"Gigabyte B660", price:160, img:"images/b660.jpg"},
+  {name:"ASRock Z690", price:300, img:"images/z690.jpg"},
+
+  {name:"Corsair 650W", price:90, img:"images/psu650.jpg"},
+  {name:"EVGA 750W", price:120, img:"images/psu750.jpg"},
+  {name:"Seasonic 850W", price:140, img:"images/psu850.jpg"},
+  {name:"Cooler Master 1000W", price:200, img:"images/psu1000.jpg"},
+
+  {name:"Mid Tower Case", price:100, img:"images/case_mid.jpg"},
+  {name:"Full Tower Case", price:150, img:"images/case_full.jpg"},
+  {name:"Mini ITX Case", price:120, img:"images/case_mini.jpg"},
+  {name:"RGB Case", price:180, img:"images/case_rgb.jpg"}
+];
+
+const grid = document.getElementById("product-grid");
+
+products.forEach(p => {
+  grid.innerHTML += `
+    <div class="card">
+      <img src="${p.img}" onerror="this.src='images/default.jpg'">
+      <h3>${p.name}</h3>
+      <p>€${p.price}</p>
+      <button onclick="addToCart('${p.name}', ${p.price})">Add to Cart</button>
+    </div>
+  `;
+});
+
+function addToCart(name, price) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push({name, price});
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert(name + " added to cart");
+}
+</script>
+
+
+</body>
+</html>
+
+    <!-- Page content to enable scrolling -->
+    
+</body>
+</html>
