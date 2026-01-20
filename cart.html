@@ -37,6 +37,42 @@ h1 { text-align:center; margin-bottom:30px; }
 <div class="total" id="total"></div>
 
 <script>
+const products = [
+  {name:"Intel i5", price:200, img:"images/intel_i5.jpg"},
+  {name:"Intel i7", price:300, img:"images/intel_i7.jpg"},
+  {name:"Ryzen 5", price:220, img:"images/ryzen5.jpg"},
+  {name:"Ryzen 7", price:350, img:"images/ryzen7.jpg"},
+
+  {name:"RTX 3060", price:400, img:"images/rtx3060.jpg"},
+  {name:"RTX 4070", price:700, img:"images/rtx4070.jpg"},
+  {name:"RX 6700 XT", price:500, img:"images/rx6700.jpg"},
+  {name:"RX 6800 XT", price:800, img:"images/rвенx6800.jpg"},
+
+  {name:"16GB DDR4", price:70, img:"images/ddr4_16.jpg"},
+  {name:"32GB DDR4", price:130, img:"images/ddr4_32.jpg"},
+  {name:"16GB DDR5", price:100, img:"images/ddr5_16.jpg"},
+  {name:"32GB DDR5", price:180, img:"images/ddr5_32.jpg"},
+
+  {name:"512GB SSD", price:60, img:"images/ssd_512.jpg"},
+  {name:"1TB SSD", price:100, img:"images/ssd_1tb.jpg"},
+  {name:"2TB SSD", price:180, img:"images/ssd_2tb.jpg"},
+  {name:"2TB HDD", price:80, img:"images/hdd_2tb.jpg"},
+
+  {name:"MSI B550", price:150, img:"images/b550.jpg"},
+  {name:"ASUS X570", price:250, img:"images/x570.jpg"},
+  {name:"Gigabyte B660", price:160, img:"images/b660.jpg"},
+  {name:"ASRock Z690", price:300, img:"images/z690.jpg"},
+
+  {name:"Corsair 650W", price:90, img:"images/psu650.jpg"},
+  {name:"EVGA 750W", price:120, img:"images/psu750.jpg"},
+  {name:"Seasonic 850W", price:140, img:"images/psu850.jpg"},
+  {name:"Cooler Master 1000W", price:200, img:"images/psu1000.jpg"},
+
+  {name:"Mid Tower Case", price:100, img:"images/case_mid.jpg"},
+  {name:"Full Tower Case", price:150, img:"images/case_full.jpg"},
+  {name:"Mini ITX Case", price:120, img:"images/case_mini.jpg"},
+  {name:"RGB Case", price:180, img:"images/case_rgb.jpg"}
+];
 function loadCart(){
     const cartDiv = document.getElementById('cart');
     const totalDiv = document.getElementById('total');
@@ -75,4 +111,5 @@ window.onload = loadCart;
 </script>
 
 </body>
+
 </html>
